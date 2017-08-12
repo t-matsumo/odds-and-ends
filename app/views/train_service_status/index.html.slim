@@ -1,0 +1,41 @@
+h1 電車運行状況
+
+h2 よく乗る路線の遅延・運転見合わせ
+-if @favortiteTrainInformations.empty?
+  p 遅延・運転見合わせはありません
+-else
+  table
+    thead
+      tr
+        th 路線
+        th 状況
+        th 詳細
+    tbody
+      - @favortiteTrainInformations.each do |trainInformation|
+        tr
+            td 
+              == trainInformation.train
+            td
+              == trainInformation.status
+            td
+              == trainInformation.detail
+
+h2 すべての路線の遅延・運転見合わせ
+-if @allTrainInformations.empty?
+  p 遅延・運転見合わせはありません
+- else
+  table
+    thead
+      tr
+        th 路線
+        th 状況
+        th 詳細
+    tbody
+      - @allTrainInformations.each do |trainInformation|
+        tr
+          td 
+            == trainInformation.train
+          td
+            == trainInformation.status
+          td
+            == trainInformation.detail

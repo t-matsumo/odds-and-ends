@@ -12,6 +12,10 @@ gem 'rails', '~> 5.1.3'
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
+# This gem provides jQuery and the jQuery-ujs driver for your Rails 4+ application.
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+# Official Sass port of Bootstrap 2 and 3.
+gem 'bootstrap-sass', '~> 3.3.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -46,9 +50,25 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  # gem 'spring'
+  # gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Slim is a template language whose goal is reduce the syntax to the essential parts without becoming cryptic.
+gem 'slim', '~> 3.0', '>= 3.0.8'
+
+# A simple wrapper of slack incoming webhooks. 
+gem 'slack-incoming-webhooks'
+
+# Autoload dotenv in Rails.
+gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
+
+# Clean ruby syntax for writing and deploying cron jobs.
+gem 'whenever', '~> 0.9.7', require: false
+
+# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+gem 'spring'
+gem 'spring-watcher-listen', '~> 2.0.0'
