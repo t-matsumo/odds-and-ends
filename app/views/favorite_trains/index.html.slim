@@ -1,0 +1,11 @@
+== render 'menu'
+
+h1 一覧
+- if @favorite_trains.blank?
+  p お気に入りの路線は登録されていません
+- else
+  - @favorite_trains.each do |favorite_train|
+    ul
+      li 
+        = favorite_train.name 
+        = link_to '削除', favorite_train, :method => :delete

@@ -1,0 +1,6 @@
+== render 'menu'
+
+h1 お気に入り路線追加
+= form_for @favorite_train do |f|
+  = f.text_field :name
+  = f.submit :追加

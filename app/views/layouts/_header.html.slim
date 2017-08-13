@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title odds & ends
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  body
+    h1 = link_to 'odds & ends', controller: :index, action: :index
+    = link_to '電車運行状況一覧', controller: :train_service_status, action: :index
+    = link_to 'お気に入り路線一覧', controller: :favorite_trains, action: :index
+    

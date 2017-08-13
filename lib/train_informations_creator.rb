@@ -1,20 +1,20 @@
 class TrainInformationsCreator
   def self.create
-    trainInfomationHTML = Nokogiri::HTML(open('https://transit.yahoo.co.jp/traininfo/area/4/'))
+    train_infomation_html = Nokogiri::HTML(open('https://transit.yahoo.co.jp/traininfo/area/4/'))
 
-    trainInformations = []
-    trainInfomationHTML.css('div#mdStatusTroubleLine tr').each do |tableRow|
-      if tableRow.css('td').present?
-        train = tableRow.css('a').text
-        status = tableRow.css('span.colTrouble').text
-        detail = tableRow.css('td').last.text
+    train_informations = []
+    train_infomation_html.css('div#mdStatusTroubleLine tr').each do |table_row|
+      if table_row.css('td').present?
+        train = table_row.css('a').text
+        status = table_row.css('span.colTrouble').text
+        detail = table_row.css('td').last.text
 
-        trainInformation = TrainInformation.new(train, status, detail)
+        train_information = TrainInformation.new(train, status, detail)
 
-        trainInformations.push(trainInformation)
+        train_informations.push(train_information)
       end
     end
 
-    return trainInformations
+    return train_informations
   end
 end

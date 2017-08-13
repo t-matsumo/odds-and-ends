@@ -1,0 +1,2 @@
+class FavoriteTrain < ApplicationRecord
+end
