@@ -24,7 +24,10 @@ env :PATH, ENV['PATH']
 set :output, 'log/crontab.log'
 set :environment, :production
 
-# every '*/20 7-21 * * *' do
-every '*/20 * * * *' do
+every '30 7,8,19 * * 1-5' do
+  runner "TrainInformationNotification.notify"
+end
+
+every '0 8,9,19 * * 1-5' do
   runner "TrainInformationNotification.notify"
 end
