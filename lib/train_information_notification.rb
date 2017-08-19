@@ -6,7 +6,7 @@ class TrainInformationNotification
     train_informations = TrainInformationsCreator.create
     train_informations.each do |train_information|
       favorite_trains.each do |favorite_train|
-        if favorite_train == train_information.train
+        if favorite_train.name == train_information.train
           text.concat("*・#{train_information.train}*\n　#{train_information.status}\n　#{train_information.detail}\n\n")
           break
         end

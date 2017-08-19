@@ -10,7 +10,7 @@ class TrainServiceStatusController < ApplicationController
       @all_train_informations.push(train_information)
 
       favorite_trains.each do |favorite_train|
-        if favorite_train == train_information.train
+        if favorite_train.name == train_information.train
           @favortite_train_tnformations.push(train_information)
           break
         end
